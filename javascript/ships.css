@@ -1,0 +1,19 @@
+#set_field{
+    border: #30ff06 double 2px;
+    width: 480px;
+    height: 480px;
+    table-layout: fixed;
+    cursor: crosshair;
+    caption-side: top;
+    background-color: #04daff;
+    text-align: center;
+
+}
+td{
+    image-rendering: auto;
+}
+.ship{
+background-color: black}
+.disable{
+background-color: rgba(11, 10, 10, 0.12);
+}

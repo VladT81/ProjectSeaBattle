@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ships.css">
+    <title>Title</title>
+
+</head>
+<body onkeypress="setOrient(event); setDeck(event)">
+<div>
+    <div>
+        <script src="field.js"></script>
+    </div>
+    <div>События установки:
+        <p id="deck">Установка корабля:</p>
+        <p id="orient">Ориентация корабля:</p>
+        <p id="score">Количество очков:</p>
+    </div>
+</div>
+<script src="interface.js"></script>
+<script src="inspection_koord.js"></script>
+<script src="koordinate.js"></script>
+<script src="installShip.js"></script>
+</body>
+<script>
+    var score = 0;
+    var ship4, ship31, ship32, ship21, ship22, ship23, ship11, ship12, ship13, ship14;//координаты кораблей
+
+
+    function writeShip(shipKoord){
+        var i= 0, idShip;
+        var indexShip = shipKoord.length;
+        do{
+            idShip = shipKoord[i];
+            document.getElementById(idShip).className = "ship";
+            i++;
+        }while(i<indexShip)
+    }
+
+
+    function writeArea(disableKoord){
+        var i = 0, idArea;
+        var indexArea = disableKoord.length;
+        do{
+            idArea = disableKoord[i];
+            document.getElementById(idArea).className = "disable";
+            i++;
+        }while(i<indexArea)
+    }
+
+</script>
+
+</html>

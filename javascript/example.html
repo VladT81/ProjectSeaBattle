@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ships.css">
+</head>
+<body onkeypress="setOrient(event); setDeck(event)">
+<div>
+    <script>
+        document.write("<table id='set_field' rules='all'>");//начало поля table
+        document.write("<tr> ");                            // первая
+        for (var i1= 0; i1<=11; i1++){                      //строка
+            document.write('<td id=' + 'a' + i1  + ">");    //поля
+        }
+        var idIndex = 0;                                               //формирование игрового поля
+        for(var i=0; i<=9; i++){
+            document.write("<tr>");
+            document.write('<td id=' + 'v1' + i + ">");
+            for(var j=0; j<=9; j++){
+                document.write("<td id=" + ++idIndex  + " onclick=\"set(this)\"" + " class= \"0\"" + ">");
+            }
+            document.write("<td id=" + "v2" + i + ">");
+        }
+        document.write("<tr> ");                          //последняя
+        for (var i2= 0; i2<=11; i2++){                    //строка
+            document.write('<td id=' + 'b' + i2  + ">");  //поля
+        }
+        document.write("</table>");                         //конец поля table
+
+        function writeKoord(sKoord, aKoord){
+            var index1 = sKoord.length;
+            var index2 = aKoord.length;
+            for (var j=0; j<index1; j++){
+                var elem1 = document.getElementById(sKoord[j]);
+                elem1.setAttribute("class", "ship");
+            }
+            for (var k=0; k<index2; k++){
+
+            }
+        }
+
+        function set(id_s){
+            var shipKoord = [],disableKoord = [];
+             var index = 15;
+            for (i=0; i<3; i++){
+                shipKoord[i] = Number(id_s.id)+i;
+                disableKoord [i] = index+i+10;
+            }
+            console.log();
+            console.log(disableKoord);
+            function writeShip(sKoord, aKoord){
+                var ind, i= 0, idShip, elem1;
+                do{
+                    ind  = aKoord.length;
+                    idShip = aKoord[i];
+                    elem1 = document.getElementById(idShip).className = "ship";
+                    i++;
+                } while (ind>0)
+            }
+            writeKoord(shipKoord, disableKoord);
+
+
+
+
+
+
+
+
+        }
+
+    </script>
+</div>
+
+
+</body>
+
+</html>
